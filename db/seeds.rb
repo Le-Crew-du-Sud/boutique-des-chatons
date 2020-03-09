@@ -3,20 +3,20 @@ require 'faker'
 # Lien vers faker : https://github.com/faker-ruby/faker
 
 puts "Réinitialisation des tables ..."
-Categories.destroy_all
+Category.destroy_all
 print "Categories"
-Items.destroy_all
+Item.destroy_all
 print ", Items"
-Purchases.destroy_all
+Purchase.destroy_all
 print ", Purchases"
-Users.destroy_all
+User.destroy_all
 puts ", Users."
-puts "Tables réinitialisées"
+puts "Tables réinitialisées."
 
 puts "Création des seeds ..."
 seed = 1
 5.times do
-  Categories.create(
+  Category.create(
     name: Faker::Lorem.words)
     puts "Seed Categories n°#{seed} crée."
     seed += 1
@@ -24,7 +24,7 @@ end
 seed = 1
 image_url = 1
 5.times do
-  Items.create(
+  Item.create(
     title: Faker::Lorem.words,
     description: Faker::Lorem.sentence,
     price: Faker::Commerce.price,
@@ -36,7 +36,7 @@ image_url = 1
 end
 seed = 1
 5.times do
-  Purchases.create(
+  Purchase.create(
     user_id: 2,
     item_id: 2,
     quantity: 1,
@@ -47,7 +47,7 @@ seed = 1
 end
 seed = 1
 5.times do
-  Users.create(
+  User.create(
     email: Faker::Lorem.words)
     puts "Seed Users n°#{seed} crée."
     seed += 1
