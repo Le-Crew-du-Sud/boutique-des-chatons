@@ -1,7 +1,18 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+# Fichier à màj avec les nouvelles tables et les fakers souhaités :
+# Lien vers faker : https://github.com/faker-ruby/faker
+
+puts "Réinitialisation de la table Table1"
+Table1.destroy_all
+puts "Table Table1 réinitialisée"
+
+puts "Création des seeds ..."
+seed = 1
+5.times do
+  Table1.create(
+    object: Faker::Lorem.words,
+    body: Faker::Lorem.sentence)
+    puts "Création du seed #{seed}"
+    seed += 1
+end
+puts "Création des seeds terminées."
