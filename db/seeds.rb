@@ -17,20 +17,20 @@ puts "Création des seeds ..."
 seed = 1
 5.times do
   Category.create(
-    name: Faker::Lorem.words)
-    puts "Seed Categories n°#{seed} crée."
+    name: Faker::Lorem.word)
+    puts "Seed Categorie n°#{seed} crée."
     seed += 1
 end
 seed = 1
 image_url = 1
 5.times do
   Item.create(
-    title: Faker::Lorem.words,
+    title: Faker::Lorem.word,
     description: Faker::Lorem.sentence,
     price: Faker::Commerce.price,
     image_url: "#{image_url}.jpg",
     category_id:2,)
-    puts "Seed Items n°#{seed} crée."
+    puts "Seed Item n°#{seed} crée."
     seed += 1
     image_url += 1
 end
@@ -42,14 +42,14 @@ seed = 1
     quantity: 1,
     unite_price: Faker::Commerce.price,
     stripe_id: Faker::Alphanumeric.alpha(number: 10))
-    puts "Seed Purchases n°#{seed} crée."
+    puts "Seed Purchase n°#{seed} crée."
     seed += 1
 end
 seed = 1
 5.times do
   User.create(
-    email: Faker::Lorem.words)
-    puts "Seed Users n°#{seed} crée."
+    email: Faker::Lorem.word)
+    puts "Seed User n°#{seed} crée."
     seed += 1
 end
 puts "Création des seeds terminées."
