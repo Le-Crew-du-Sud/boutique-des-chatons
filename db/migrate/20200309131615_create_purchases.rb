@@ -4,7 +4,7 @@ class CreatePurchases < ActiveRecord::Migration[5.2]
       t.references :user, index:true
       t.references :item, index:true
       t.integer :quantity
-      t.decimal :unite_price
+      t.float :unite_price
       t.string :stripe_id
 
       t.timestamps
