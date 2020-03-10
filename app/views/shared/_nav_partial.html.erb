@@ -1,14 +1,15 @@
-  <!-- Mobile Nav (max width 767px)-->
-    <div class="mobile-nav">
-        <!-- Navbar Brand -->
-        <div class="amado-navbar-brand">
-            <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
-        </div>
-        <!-- Navbar Toggler -->
-        <div class="amado-navbar-toggler">
-            <span></span><span></span><span></span>
-        </div>
-    </div>
+<!-- Mobile Nav (max width 767px)-->
+  <div class="mobile-nav">
+      <!-- Navbar Brand -->
+      <div class="amado-navbar-brand">
+          <%= link_to image_tag('logo.jpg'), "/" %>
+      </div>
+      <!-- Navbar Toggler -->
+      <div class="amado-navbar-toggler">
+          <span></span><span></span><span></span>
+      </div>
+  </div>
+
 
     <!-- Header Area Start -->
     <header class="header-area clearfix">
@@ -18,7 +19,7 @@
         </div>
         <!-- Logo -->
         <div class="logo">
-            <a href="index.html"><img src="img/core-img/logo.jpg" alt=""></a>
+            <%= link_to image_tag('logo.jpg'), root_path %>
         </div>
         <!-- Amado Nav -->
         <nav class="amado-nav">
@@ -38,6 +39,7 @@
             <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Search</a>
             <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
 
-        </div>
-    </header>
-    <!-- Header Area End -->
+
+      </div>
+  </header>
+  <!-- Header Area End -->
