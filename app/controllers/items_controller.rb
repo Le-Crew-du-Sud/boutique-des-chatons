@@ -9,8 +9,8 @@ class ItemsController < ApplicationController
 
   def create
     puts params[:title], params[:description]
-    @create_item = Item.new(title: params[:title], description: params[:description], price: params[:price],image_url: params[:price])
-    if @create_item.save
+    @item = Item.new(title: params[:title], description: params[:description], price: params[:price],image_url: params[:price])
+    if @item.save
       puts "Un produit a été créé"
       flash[:notice] = "Un produit a été créé."
       redirect_to items_path
