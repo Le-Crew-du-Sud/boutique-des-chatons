@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%= render 'head_partial' %>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <!-- Title  -->
+    <title>Kitty</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
   <body>
     <!-- Partial of research -->
-    <%= render 'search_partial' %>
+    <%= render 'shared/search_partial' %>
 
 
     <!-- ##### Main Content Wrapper Start ##### -->
     <div class="main-content-wrapper d-flex clearfix">
       <!-- Partial of Navigation -->
-      <%= render 'nav_partial' %>
+      <%= render 'shared/nav_partial' %>
       <%= yield %>
     </div>
     <!-- ##### Main Content Wrapper End ##### -->
 
-    <%= render 'footer_body_partial' %>
+    <%= render 'shared/footer_body_partial' %>
 
   </body>
 </html>
