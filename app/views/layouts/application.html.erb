@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>MyApp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-  </head>
-
+<html lang="en">
+  <%= render 'head_partial' %>
   <body>
-    <%= yield %>
+    <!-- Partial of research -->
+    <%= render 'search_partial' %>
+
+
+    <!-- ##### Main Content Wrapper Start ##### -->
+    <div class="main-content-wrapper d-flex clearfix">
+      <!-- Partial of Navigation -->
+      <%= render 'nav_partial' %>
+      <%= yield %>
+    </div>
+    <!-- ##### Main Content Wrapper End ##### -->
+
+    <%= render 'footer_body_partial' %>
+
   </body>
 </html>
