@@ -9,31 +9,13 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Amado - Furniture Ecommerce Template | Product Details</title>
+    <title></title>
 
 
 </head>
 
 <body>
-    <!-- Search Wrapper Area Start -->
-    <div class="search-wrapper section-padding-100">
-        <div class="search-close">
-            <i class="fa fa-close" aria-hidden="true"></i>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="search-content">
-                        <form action="#" method="get">
-                            <input type="search" name="search" id="search" placeholder="Type your keyword...">
-                            <button type="submit"><img src="img/core-img/search.png" alt=""></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Search Wrapper Area End -->
+
 
     <!-- ##### Main Content Wrapper Start ##### -->
     <div class="main-content-wrapper d-flex clearfix">
@@ -49,34 +31,6 @@
                 <span></span><span></span><span></span>
             </div>
         </div>
-
-        <!-- Header Area Start -->
-        <header class="header-area clearfix">
-            <!-- Close Icon -->
-            <div class="nav-close">
-                <i class="fa fa-close" aria-hidden="true"></i>
-            </div>
-            <!-- Logo -->
-            <div class="logo">
-                <a href="index.html"><img src="img/core-img/logo.jpg" alt=""></a>
-            </div>
-            <!-- Amado Nav -->
-            <nav class="amado-nav">
-                <ul>
-                    <li class="active"><a href="shop.html">Accueil</a></li>
-                    <li><a href="product-details.html">_Product</a></li>
-                    <li><a href="checkout.html">_Checkout</a></li>
-                </ul>
-            </nav>
-            <!-- Cart Menu -->
-            <div class="cart-fav-search mb-100">
-                <a href="cart.html" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Cart <span>(0)</span></a>
-                <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Search</a>
-                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-
-            </div>
-        </header>
-        <!-- Header Area End -->
         <!-- Product Details Area Start -->
         <div class="single-product-area section-padding-100 clearfix">
             <div class="container-fluid">
@@ -85,10 +39,7 @@
                     <div class="col-12">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mt-50">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">Furniture</a></li>
-                                <li class="breadcrumb-item"><a href="#">Chairs</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">white modern chair</li>
+                                <li class="breadcrumb-item active" aria-current="page"> <%=  %> </li>
                             </ol>
                         </nav>
                     </div>
@@ -108,7 +59,7 @@
                                     <li data-target="#product_details_slider" data-slide-to="3" style="background-image: url(img/product-img/pro-big-4.jpg);">
                                     </li>
                                 </ol>
-                                <div class="carousel-inner">
+                                <div class="carousel-inner" style="min-width: 40em">
                                     <div class="carousel-item active">
                                         <a class="gallery_img" href="img/product-img/pro-big-1.jpg">
                                             <img class="d-block w-100" src="img/product-img/pro-big-1.jpg" alt="First slide">
@@ -125,7 +76,7 @@
                                         </a>
                                     </div>
                                     <div class="carousel-item">
-                                        <a class="gallery_img" href="img/product-img/pro-big-4.jpg">
+                                        <a class="gallery_img" href="img/product-img/pro-big-4.jpg">p
                                             <img class="d-block w-100" src="img/product-img/pro-big-4.jpg" alt="Fourth slide">
                                         </a>
                                     </div>
@@ -136,11 +87,11 @@
                     <div class="col-12 col-lg-5">
                         <div class="single_product_desc">
                             <!-- Product Meta Data -->
-                            <div class="product-meta-data">
+                            <div class="product-meta-data" >
                                 <div class="line"></div>
-                                <p class="product-price">$180</p>
+                                <p class="product-price"> <%= @item.price %>€ </p>
                                 <a href="product-details.html">
-                                    <h6>White Modern Chair</h6>
+                                    <h6> <%= @item.title %> </h6>
                                 </a>
                                 <!-- Ratings & Review -->
                                 <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
@@ -160,7 +111,7 @@
                             </div>
 
                             <div class="short_overview my-5">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quae eveniet culpa officia quidem mollitia impedit iste asperiores nisi reprehenderit consequatur, autem, nostrum pariatur enim?</p>
+                                <p> <%= @item.description %> </p>
                             </div>
 
                             <!-- Add to Cart Form -->
@@ -184,47 +135,3 @@
         <!-- Product Details Area End -->
     </div>
     <!-- ##### Main Content Wrapper End ##### -->
-
-
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer_area clearfix">
-        <div class="container">
-            <div class="row align-items-center">
-                <!-- Single Widget Area -->
-                <div class="col-12 col-lg-4">
-                    <div class="single_widget_area">
-                        <!-- Logo -->
-                        <div class="footer-logo mr-50">
-                            <a href="index.html"><img src="img/core-img/logo.jpg" alt=""></a>
-                        </div>
-                        <!-- Copywrite Text -->
-                        <p class="copywrite">
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |  Made with <i class="fa fa-heart-o" aria-hidden="true"></i>
-<br> by Le Crew (pas totalement) du Sud</p>
-                    </div>
-                </div>
-                <!-- Single Widget Area -->
-                <div class="col-12 col-lg-8">
-                    <div class="single_widget_area">
-                        <!-- Footer Menu -->
-                        <div class="footer_menu">
-                            <nav class="navbar navbar-expand-lg justify-content-end">
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#footerNavContent" aria-controls="footerNavContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
-                                <div class="collapse navbar-collapse" id="footerNavContent">
-                                    <ul class="navbar-nav ml-auto">
-
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="shop.html">Accueil</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="cart.html">Panier</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
