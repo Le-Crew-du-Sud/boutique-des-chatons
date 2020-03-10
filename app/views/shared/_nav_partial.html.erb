@@ -23,12 +23,13 @@
         <!-- Amado Nav -->
         <nav class="amado-nav">
             <ul>
-                <li class="active"><a href="shop.html">Accueil</a></li>
-                <li><a href="product-details.html">_Product</a></li>
-                <li><a href="checkout.html">_Checkout</a></li>
-                <li><a href="create_user.html">_Inscription</a></li>
-                <li><a href="connect_user.html">_Connexion</a></li>
-                <li><a href="create_kitty.html">_New item</a></li>
+
+                <li><%= link_to "Home", root_path %></li>
+                <li><%= link_to "Product", item_path(item.id)%></li>
+                <%#<%= link_to "checkout", new_item_path %></li> %>
+                <li><%= link_to "create_user", new_user_registration_path %></li>
+                <li><%= link_to "connect_user", new_user_session_path %></li>
+                <li><%= link_to "create_user", new_item_path %></li>
             </ul>
         </nav>
         <!-- Cart Menu -->
