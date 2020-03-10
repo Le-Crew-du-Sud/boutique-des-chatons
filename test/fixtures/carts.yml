@@ -1,0 +1,14 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  item_id: 1
+  quantity: 1
+  unit_price: 9.99
+
+
+two:
+  user_id: 1
+  item_id: 1
+  quantity: 1
+  unit_price: 9.99
