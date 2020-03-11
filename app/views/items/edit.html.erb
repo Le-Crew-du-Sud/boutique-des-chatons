@@ -5,7 +5,7 @@
     <% puts "#############################".red %>
     <% puts "@item.itempicture.length = #{@item.itempicture.length}".red %>
     <% puts "#############################".red %>
-    <% @item.itempicture.each do |prodpicture| %>
+    <% @item.itempicture.each do |itempicture| %>
       <%= image_tag itempicture, alt: 'itempicture' %>
       <%= link_to 'Effacer', item_itempicture_path(@item.id, itempicture.id),
         method: :delete,
