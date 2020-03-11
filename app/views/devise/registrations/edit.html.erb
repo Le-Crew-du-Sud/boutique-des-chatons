@@ -10,11 +10,6 @@
           </div>
           <div class="row">
             <div class="col-md-3 mb-3">
-              <p>Avatar : </p><a href="#" class="btn amado-btn btn-sm">Sélectionner un nouvel avatar</a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3 mb-3">
               <p>Email : </p>
               <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
               <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
