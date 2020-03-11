@@ -3,14 +3,14 @@
   <!-- ##### Single Widget ##### -->
   <div class="widget catagory mb-50">
     <!-- Widget Title -->
-    <h6 class="widget-title mb-30">Catagories</h6>
+    <h6 class="widget-title mb-30">Categories</h6>
 
     <!-- Catagories -->
     <div class="catagories-menu">
       <ul>
         <% Category.all.each do |cat| %>
         <li id="category-<%= cat.id %>" class="active">
-          <%= link_to cat.name, "#", remote: true %>
+          <%= link_to cat.name, category_path(cat.id), remote: true %>
         </li>
         <% end %>
       </ul>
