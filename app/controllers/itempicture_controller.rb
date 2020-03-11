@@ -6,6 +6,7 @@ class ItempictureController < ApplicationController
     redirect_to(item_path(@item))
   end
 
+
   def destroy
     @itempicture = ActiveStorage::Attachment.find(params[:id])
     @itempicture.purge
