@@ -3,5 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :items
+
   resources :users, only: [:edit, :show]
+
+  # cette route a été crée pour tester Stripe. Il doit être effacé aprés integration.
+  resources :charges
+
 end
