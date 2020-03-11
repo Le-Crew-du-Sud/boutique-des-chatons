@@ -26,11 +26,15 @@
             <ul>
 
                 <li><%= link_to "Home", root_path %></li>
-                
+
 
                 <li><%= link_to "create_user", new_user_registration_path %></li>
                 <li><%= link_to "connect_user", new_user_session_path %></li>
+                <% if user_signed_in? %>
+                <li><%= link_to "edit_user", edit_user_registration_path %></li>
+                <% end %>
                 <li><%= link_to "create_item", new_item_path %></li>
+
             </ul>
         </nav>
         <!-- Cart Menu -->
