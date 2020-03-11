@@ -9,10 +9,9 @@
     <div class="catagories-menu">
       <ul>
         <% Category.all.each do |cat| %>
-        <li class="active">
-          <a href="#"><%= cat.name %></a>
+        <li id="category-<%= cat.id %>" class="active">
+          <%= link_to cat.name, "#", remote: true %>
         </li>
-
         <% end %>
       </ul>
     </div>
