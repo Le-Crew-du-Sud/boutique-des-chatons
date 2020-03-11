@@ -7,33 +7,19 @@
             <h2>Votre profil</h2>
           </div>
           <div class="row">
-            <div class="col-md-3 mb-3">
-              <p>Avatar : </p>
-            </div>
+
           </div>
-          <div class="row">
-            <div class="col-md-3 mb-3">
-              <p>Prénom : </p>
-            </div>
-            <div class="col-md-3 mb-3">
-              <p>Nom : </p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3 mb-3">
-              <p>Email : </p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3 mb-3">
-              <p>Mot de passe : </p>
+
+          <div>
+              <p>Email : <%= current_user.email %></p>
+
+            <p>Compte créé le: <%=  current_user.created_at %></p>
             </div>
           </div>
           <div class="cart-btn mt-50 ml-auto">
-            <a href="#" class="btn amado-btn">Editer le profil</a>
+                <%= button_to "Éditer mon profil", edit_user_registration_path, class:"btn amado-btn", method: :get %>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
