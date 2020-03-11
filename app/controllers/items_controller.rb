@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
   def index
 
   end
-  
+
   def show
     @item = Item.find(params[:id])
   end
@@ -33,4 +34,3 @@ class ItemsController < ApplicationController
     redirect_to index_path
   end
 end
-

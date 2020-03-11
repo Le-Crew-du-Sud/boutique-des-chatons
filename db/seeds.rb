@@ -7,8 +7,8 @@ Category.destroy_all
 print "Categories"
 Item.destroy_all
 print ", Items"
-Purchase.destroy_all
-print ", Purchases"
+Cart.destroy_all
+print ", Carts"
 User.destroy_all
 puts ", Users."
 puts "Tables réinitialisées."
@@ -36,13 +36,12 @@ image_url = 1
 end
 seed = 1
 5.times do
-  Purchase.create(
+  Cart.create(
     user_id: 2,
     item_id: 2,
     quantity: 1,
-    unite_price: Faker::Commerce.price,
-    stripe_id: Faker::Alphanumeric.alpha(number: 10))
-    puts "Seed Purchase n°#{seed} crée."
+    unit_price: Faker::Commerce.price)
+    puts "Seed Cart n°#{seed} crée."
     seed += 1
 end
 seed = 1
