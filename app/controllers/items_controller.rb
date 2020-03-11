@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+    @item = Item.with_attached_prodpicture.find(params[:id])
   end
 
   def create

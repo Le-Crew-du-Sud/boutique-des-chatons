@@ -25,6 +25,27 @@
       <div class="col-12 col-lg-7">
         <div class="single_product_thumb">
           <img src="<%= @item.image_url %>">
+          <!-- Active Storage -->
+            <h3>prodpicture actuel</h3>
+            <%if @item.prodpicture.attached?%>
+              <% puts "#############################".red %>
+              <% puts "@item.prodpicture.length = #{@item.prodpicture.length}".red %>
+              <% puts "#############################".red %>
+              <% @item.prodpicture.each do |prodpicture| %>
+                <%= image_tag prodpicture, alt: 'prodpicture' %>
+                <%= link_to 'Effacer', item_prodpicture_path(@item.id, prodpicture.id),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+              <% end %>
+            <%else%>
+              <p>=== Il n'y a pas encore de prodpicture lié à cet item ===</p>
+            <%end%>
+            <h3>Changer de prodpicture ?</h3>
+            <%= form_tag item_prodpicture_index_path(@item), multipart: true do %>
+              <%= file_field_tag :prodpicture, multiple: true %>
+              <%= submit_tag "mettre à jour" %>
+            <% end %>
+          <!-- End Active Storage -->
         </div>
       </div>
       <div class="col-12 col-lg-5">
