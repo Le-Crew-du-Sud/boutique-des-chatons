@@ -1,15 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 1
-  item_id: 1
-  quantity: 1
-  unite_price: 9.99
   stripe_id: MyString
 
 two:
-  user_id: 1
-  item_id: 1
-  quantity: 1
-  unite_price: 9.99
   stripe_id: MyString

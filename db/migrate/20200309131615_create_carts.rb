@@ -1,12 +1,10 @@
-class CreatePurchases < ActiveRecord::Migration[5.2]
+class CreateCarts < ActiveRecord::Migration[5.2]
   def change
-    create_table :purchases do |t|
+    create_table :carts do |t|
       t.references :user, index:true
       t.references :item, index:true
       t.integer :quantity
-      t.float :unite_price
-      t.string :stripe_id
-
+      t.float :unit_price
       t.timestamps
     end
   end
