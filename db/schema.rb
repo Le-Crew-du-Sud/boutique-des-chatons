@@ -20,11 +20,9 @@ ActiveRecord::Schema.define(version: 2020_03_10_173557) do
     t.bigint "item_id"
     t.integer "quantity"
     t.float "unit_price"
-    t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_carts_on_item_id"
-    t.index ["order_id"], name: "index_carts_on_order_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
@@ -46,9 +44,15 @@ ActiveRecord::Schema.define(version: 2020_03_10_173557) do
   end
 
   create_table "orders", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "item_id"
+    t.integer "quantity"
+    t.float "unit_price"
     t.string "stripe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_orders_on_item_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

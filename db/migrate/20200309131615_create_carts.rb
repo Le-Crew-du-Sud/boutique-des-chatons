@@ -5,9 +5,6 @@ class CreateCarts < ActiveRecord::Migration[5.2]
       t.references :item, index:true
       t.integer :quantity
       t.float :unit_price
-      t.references :order, index:true
-
-
       t.timestamps
     end
   end
