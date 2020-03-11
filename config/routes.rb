@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root :to => 'items#index'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :items
+  resources :items do
+    resources :itempicture, only: [:create, :destroy]
+  end
 
   resources :categories, only: [:show]
 
