@@ -13,7 +13,7 @@
                   <%= image_tag itempicture, alt: 'itempicture', style:"width:100%", class:""%>
                 </div>
 
-                
+
                 </div>
               <% end %>
             <%else%>
@@ -50,6 +50,9 @@
 
           </div>
         </div>
+      </div>
+      <div>
+        <%= link_to "Supprimer ce châton", item_path(@item.id), class:"btn amado-btn", data:{method: "DELETE"} %>
       </div>
     </div>
   </div>
