@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
 
   def create
     puts params[:title], params[:description]
-    @item = Item.new(title: params[:title], description: params[:description], price: params[:price],image_url: params[:price])
+    @item = Item.new(title: params[:title], description: params[:description], price: params[:price],image_url: params[:price], category_id: params[:category_id])
     if @item.save
       puts "Un produit a été créé"
       flash[:notice] = "Un produit a été créé."
@@ -24,6 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @category_array = Category.all.map { |category| [category.name, category.id] }
   end
 
   def edit
