@@ -1,13 +1,13 @@
 <% Item.all.where(category_id: params[:id]).each do |item| %>
-
 <div class="col-12 col-sm-6 col-md-12 col-xl-6">
   <div class="single-product-wrapper">
-    <!-- Product Image -->
-    <div class="product-img">
-      <%= image_tag "product1.jpg", alt: "chaton_picture"%>
-      <!-- Hover Thumb -->
-      <%= image_tag "product2.jpg", class:"hover-img", alt: "chaton_picture"%>
-    </div>
+    <% @itemvar = item.id %>
+    <% item.itempicture.each do |itempicture| %>
+      <div class="product-img">
+        <%= image_tag item.itempicture.first, alt: 'chaton' %>
+      </div>
+      <% break %>
+    <% end %>
 
       <!-- Product Description -->
     <div class="product-description d-flex align-items-center justify-content-between">
