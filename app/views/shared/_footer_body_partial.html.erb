@@ -29,9 +29,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                     <li class="nav-item">
                                         <%= link_to "Accueil", root_path, class:"nav-link" %>
                                     </li>
+                                    <% if user_signed_in? %>
                                     <li class="nav-item">
                                       <%= link_to 'Mon profil',user_path(current_user.id), class:"nav-link" %>
                                     </li>
+                                    <% end %>
 
                                 </ul>
                             </div>
