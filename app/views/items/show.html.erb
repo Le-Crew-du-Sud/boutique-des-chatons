@@ -6,11 +6,29 @@
     <div class="row">
       <div class="col-12 col-lg-7">
         <div class="single_product_thumb">
-          <img src="<%= @item.image_url %>">
+          <div class="d-flex flex-wrap">
+            <%if @item.itempicture.attached?%>
+              <% @item.itempicture.each do |itempicture| %>
+              <div class="flex-row col-4">
+                <div class="thumbnail">
+                  <%= image_tag itempicture, alt: 'itempicture', style:"width:100%", class:""%>
+                </div>
+
+
+                </div>
+              <% end %>
+            <%else%>
+
+              <p>=== Il n'y a pas encore d'image liée à ce châton ===</p>
+
+            <%end%>
+            </div>
+
         </div>
       </div>
+
       <div class="col-12 col-lg-5">
-        <div class="single_product_desc">
+        <div class="single_product_description">
           <!-- Product Meta Data -->
           <div class="product-meta-data">
             <div class="line"></div>
@@ -27,6 +45,7 @@
           <!-- Add to Cart Form -->
           <!-- <form class="cart clearfix" method="post">
             <button type="submit" name="addtocart" value="5" class="btn amado-btn">Add to cart</button>
+
           </form> -->
             <%= form_tag(carts_path, method: :create) do %>
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -37,7 +56,16 @@
             <%= submit_tag "Ajouter au Panier", class: "btn amado-btn" %>
             <% end %>
 
+          </form>
+          <div>
+          <%= link_to "Éditer ce châton", edit_item_path(@item.id)  %>
+
+
+          </div>
         </div>
+      </div>
+      <div>
+        <%= link_to "Supprimer ce châton", item_path(@item.id), class:"btn amado-btn", data:{method: "DELETE"} %>
       </div>
     </div>
   </div>
