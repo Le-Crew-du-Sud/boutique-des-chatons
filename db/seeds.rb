@@ -28,7 +28,6 @@ image_url = 1
     title: Faker::JapaneseMedia::DragonBall.character,
     description: Faker::Movies::StarWars.wookiee_sentence,
     price: Faker::Commerce.price,
-    image_url: "https://radiomedecinedouce.com/attachments/images/broadcast/41063/medium.png", #"#{image_url}.jpg"
     category_id:2,)
     puts "Seed Item n°#{seed} crée."
     seed += 1
