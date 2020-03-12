@@ -3,25 +3,6 @@
   <div class="container-fluid">
 
     <div class="row">
-      <div class="col-12">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb mt-50">
-            <li class="breadcrumb-item">
-              <a href="#">Home</a>
-            </li>
-            <li class="breadcrumb-item">
-              <a href="#">Furniture</a>
-            </li>
-            <li class="breadcrumb-item">
-              <a href="#">Chairs</a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">white modern chair</li>
-          </ol>
-        </nav>
-      </div>
-    </div>
-
-    <div class="row">
       <div class="col-12 col-lg-7">
         <div class="single_product_thumb">
           <img src="<%= @item.image_url %>">
@@ -33,9 +14,9 @@
           <div class="product-meta-data">
             <div class="line"></div>
             <p class="product-price"> <%= @item.price %>€</p>
-            <a href="product-details.html">
+
               <h6> <%= @item.title %> </h6>
-            </a>
+
           </div>
 
           <div class="short_overview my-5">
@@ -52,4 +33,3 @@
     </div>
   </div>
 </div>
-<!-- Product Details Area End -->
