@@ -1,14 +1,15 @@
 class CartsController < ApplicationController
 
   def create
-    puts ">>>>>>>>>>>>> #{params[:user_id]}".red
+    puts ">>>>>>>>>>>>> #{params[:unit_price]}".red
     @cart = Cart.create(
       user_id: params[:user_id],
       item_id: params[:item_id],
       quantity: params[:quantity],
       unit_price: params[:unit_price]
       )
-      redirect_back(fallback_location: request.referer)
+    puts ">>>>>> #{@cart.errors.messages}".red
+    redirect_back(fallback_location: request.referer)
 
   end
 
