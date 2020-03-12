@@ -1,4 +1,4 @@
-<% Item.all.each do |item| %>
+<% Item.all.where(category_id: params[:id]).each do |item| %>
 <div class="col-12 col-sm-6 col-md-12 col-xl-6">
   <div class="single-product-wrapper">
     <% @itemvar = item.id %>
