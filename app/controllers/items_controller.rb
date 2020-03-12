@@ -1,12 +1,14 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy]
   def index
-
+    @itemvar = 1
+    @item = Item.with_attached_itempicture.find(@itemvar)
   end
 
   def show
     # @item = Item.find(params[:id]) #remplacé par la ligne ci dessous
     @item = Item.with_attached_itempicture.find(params[:id])
+
   end
 
   def create
@@ -28,6 +30,8 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @category_array = Category.all.map { |category| [category.name, category.id] }
+    @item = Item.with_attached_itempicture.find(params[:id])
   end
 
   def destroy

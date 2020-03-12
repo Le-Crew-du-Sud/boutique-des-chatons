@@ -3,11 +3,11 @@
 <div class="col-12 col-sm-6 col-md-12 col-xl-6">
   <div class="single-product-wrapper">
     <!-- Product Image -->
+    <% item.itempicture.each do |itempicture| %>
     <div class="product-img">
-      <%= image_tag "product1.jpg", alt: "chaton_picture"%>
-      <!-- Hover Thumb -->
-      <%= image_tag "product2.jpg", class:"hover-img", alt: "chaton_picture"%>
+      <%= image_tag itempicture, alt: 'itempicture' %>
     </div>
+              <% end %>
 
       <!-- Product Description -->
     <div class="product-description d-flex align-items-center justify-content-between">
