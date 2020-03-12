@@ -29,6 +29,14 @@
     <!-- ##### Main Content Wrapper End ##### -->
 
     <%= render 'shared/footer_body_partial' %>
-
+    <!-- Retour console -->
+    <% if user_signed_in? %>
+      <% puts ">> CU is_admin? #{current_user.is_admin}".red %>
+      <% puts ">> CU email     #{current_user.email}".red %>
+      <% puts ">> CU id        #{current_user.id}".red %>
+    <% else %>
+      <% puts ">> CU is not signed_in".red %>
+    <% end %>
+    <!-- end Retour console -->
   </body>
 </html>

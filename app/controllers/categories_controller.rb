@@ -1,6 +1,10 @@
 class CategoriesController < ApplicationController
-def index
-end
+  before_action :authenticate_user!
+
+  def index
+    redirect_to index_path
+  end
+
   def show
     @categorie = Category.find(params[:id])
 
