@@ -47,6 +47,7 @@
             <button type="submit" name="addtocart" value="5" class="btn amado-btn">Add to cart</button>
 
           </form> -->
+          <div class="cart-btn mt-50 ml-auto">
             <%= form_tag(carts_path, method: :create) do %>
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
             <input type="hidden" name="item_id" value=<%= @item.id %> >
@@ -55,18 +56,19 @@
             <input type="hidden" name="quantity" value= <%= 1 %> >
             <%= submit_tag "Ajouter au Panier", class: "btn amado-btn" %>
             <% end %>
-
-          </form>
-          <div>
-          <%= link_to "Éditer ce châton", edit_item_path(@item.id)  %>
+            </div>
 
 
+          <div class="cart-btn mt-50 ml-auto">
+          <%= link_to "Éditer ce châton", edit_item_path(@item.id), class:"btn amado-btn"  %>
+          </div>
+          <div class="cart-btn mt-50 ml-auto">
+            <%= link_to "Supprimer ce châton", item_path(@item.id), class:"btn amado-btn", data:{method: "DELETE"} %>
           </div>
         </div>
+
       </div>
-      <div>
-        <%= link_to "Supprimer ce châton", item_path(@item.id), class:"btn amado-btn", data:{method: "DELETE"} %>
-      </div>
+
     </div>
   </div>
 </div>

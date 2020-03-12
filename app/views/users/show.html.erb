@@ -4,22 +4,59 @@
       <div class="col-12 col-lg-8">
         <div class="checkout_details_area mt-50 clearfix">
           <div class="cart-title">
-            <h2>Votre profil</h2>
-          </div>
-          <div class="row">
+            <% if user_signed_in? && current_user.is_admin == true %>
+            <h2>Votre profil admin</h2>
+            <% else %>
+            <h2>Votre profil utilisateur</h2>
+            <% end %>
 
           </div>
-
+          <div>
           <div>
               <p>Email : <%= current_user.email %></p>
 
             <p>Compte créé le: <%=  current_user.created_at %></p>
+
+
+          <% if user_signed_in? && current_user.is_admin == true %>
+            <p>Utilisateur enregistré en tant qu'Admin</p>
+</div>
+
+            <div style="">
+            <table class="table" >
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Produits</th>
+                  <th scope="col">Prix</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                  <% Item.all.each do |item| %>
+                  <tr>
+                  <td><%= item.id %></td>
+                    <td><%= link_to item.title, item_path(item.id) %></td>
+                    <td><%= link_to item.price, item_path(item.id) %></td>
+                    </tr>
+                  <% end %>
+
+
+                </tbody>
+                </table>
+                <hr>
             </div>
-          </div>
+
+            <% end %>
+
+
+
           <div class="cart-btn mt-50 ml-auto">
                 <%= button_to "Éditer mon profil", edit_user_registration_path, class:"btn amado-btn", method: :get %>
+          </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
