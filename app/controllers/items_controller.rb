@@ -34,6 +34,17 @@ class ItemsController < ApplicationController
     @item = Item.with_attached_itempicture.find(params[:id])
   end
 
+  def update
+    @item = Item.find(params[:id])
+
+    if @item.update(title: params[:title], description: params[:description], price: params[:price], category_id: params[:category_id])
+    redirect_to @item
+    else
+      render :edit
+    end
+  end
+
+
   def destroy
     @item = Item.find(params[:id])
     @item.destroy

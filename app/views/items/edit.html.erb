@@ -4,64 +4,73 @@
     <div class="row">
       <div class="col-12 col-lg-8">
         <div class="checkout_details_area mt-50 clearfix">
-
           <div class="cart-title">
             <h2>Éditer un châton</h2>
           </div>
-
-
-
-
-          <%= form_tag url_for(action: 'create'), method: 'update' do %>
+          <%= form_tag url_for(action: 'update'), method: "patch" do %>
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
           <div class="row">
             <div class="col-12 mb-3">
-              <%= text_field_tag 'title', nil, class: 'form-control', placeholder:"Titre" %>
+              <%= text_field_tag 'title', @item.title, class:"form-control"%>
             </div>
+
             <div class="col-12 mb-3">
-              <%= text_area_tag 'Description', nil, placeholder: "description", class: 'form-control' %>
+              <%= text_area_tag 'description', @item.description, class:"form-control" %>
             </div>
-
+            <div class="col-6 mb-3">
+              <%= number_field_tag 'price', @item.price, class:"form-control" %>
+            </div>
             <div class="col-md-6 mb-3">
-              <%= number_field_tag 'price', nil, class: 'form-control', placeholder:"Prix" %>
+              <p>Catégorie</p>
+              <%= select_tag(:category_id, options_for_select(@category_array)) %>
             </div>
-            <!-- <div class="form-group"> <label for="exampleFormControlFile1">Image</label> <input type="file" class="form-control-file"> </div> </div> -->
-          <div class="col-md-6 mb-3">
-            <%= select_tag(:category_id, options_for_select(@category_array))  %>
-          </div>
-
             <div class="cart-btn mt-50 ml-auto">
-              <%= submit_tag 'Modifier', class:"btn amado-btn" %>
+              <%= submit_tag "Modifier la page du chat", class:"btn amado-btn"%>
             </div>
-            <% end %>
-</div>
-<div class="row">
-
-
-        <br>
-          <h3>Image du châton</h3>
-          <%if @item.itempicture.attached?%>
-
-            <% @item.itempicture.each do |itempicture| %>
-              <%= image_tag itempicture, alt: 'itempicture' %>
-              <div class="cart-btn mt-50 ml-auto">
-              <%= link_to 'Effacer', item_itempicture_path(@item.id, itempicture.id),
-                method: :delete, class:"btn amado-btn",
-                data: { confirm: 'Es-tu sûr?'} %>
-                </div>
-            <% end %>
-          <%else%>
-            <p>=== Il n'y a pas encore d'image liée à ce châton ===</p>
-          <%end%>
-          <h3>Changer de itempicture ?</h3>
-          <%= form_tag item_itempicture_index_path(@item), multipart: true do %>
-            <%= file_field_tag :itempicture, multiple: true %>
-            <div class="cart-btn mt-50 ml-auto">
-            <%= submit_tag "mettre à jour la photo", class:"btn amado-btn" %>
-            </div>
-          <% end %>-
+          <% end %>
         </div>
+        <div class="row mt-100">
+          <div class="col-10 mb-3">
+            <h3>Ajouter une photo</h3>
+          </div>
+          <%= form_tag item_itempicture_index_path(@item), multipart: true do %>
+          <%= file_field_tag :itempicture, multiple: true %>
+          <div class="cart-btn mt-50 ml-auto mb-100">
+            <%= submit_tag "Ajouter", class:"btn amado-btn" %>
+          </div>
+        <% end %>
+        <div class="col-12 mb-3">
+          <br>
+          <h3>Image(s) du châton</h3>
+
+
+
+
+          <div class="d-flex flex-wrap">
+            <%if @item.itempicture.attached?%>
+              <% @item.itempicture.each do |itempicture| %>
+              <div class="flex-row col-4">
+                <div class="thumbnail">
+                  <%= image_tag itempicture, alt: 'itempicture', style:"width:100%", class:""%>
+                </div>
+
+                <div class="cart-btn mt-4 ml-auto">
+                  <%= link_to 'Effacer', item_itempicture_path(@item.id, itempicture.id), method: :delete, class:"btn amado-btn", data: { confirm: 'Es-tu sûr?'} %>
+                </div>
+                </div>
+              <% end %>
+            <%else%>
+
+              <p>=== Il n'y a pas encore d'image liée à ce châton ===</p>
+
+            <%end%>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
+</div>
 </div>
 </div>
