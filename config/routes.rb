@@ -14,4 +14,11 @@ Rails.application.routes.draw do
   # cette route a été crée pour tester Stripe. Il doit être effacé aprés integration.
   resources :charges
 
+  namespace :admin do
+    root to: 'admin#index'
+    resources :products, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :categories, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :orders, only: [:index]
+  end
+
 end

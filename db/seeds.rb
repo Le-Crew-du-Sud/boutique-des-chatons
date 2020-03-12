@@ -29,26 +29,8 @@ image_url = 1
     description: Faker::Movies::StarWars.wookiee_sentence,
     price: Faker::Commerce.price,
     image_url: "https://radiomedecinedouce.com/attachments/images/broadcast/41063/medium.png", #"#{image_url}.jpg"
-    category_id:2,)
+    category_id:2)
     puts "Seed Item n°#{seed} crée."
     seed += 1
     image_url += 1
 end
-seed = 1
-5.times do
-  Cart.create(
-    user_id: 2,
-    item_id: 2,
-    quantity: 1,
-    unit_price: Faker::Commerce.price)
-    puts "Seed Cart n°#{seed} crée."
-    seed += 1
-end
-seed = 1
-5.times do
-  User.create(
-    email: Faker::Lorem.word)
-    puts "Seed User n°#{seed} crée."
-    seed += 1
-end
-puts "Création des seeds terminées."
