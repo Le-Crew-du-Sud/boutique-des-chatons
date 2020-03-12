@@ -1,8 +1,8 @@
 class CartsController < ApplicationController
 
   def create
+    puts ">>>>>>>>>>>>> #{params[:user_id]}".red
     @cart = Cart.create(
-
       user_id: params[:user_id],
       item_id: params[:item_id],
       quantity: params[:quantity],

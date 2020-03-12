@@ -28,7 +28,7 @@
           <!-- <form class="cart clearfix" method="post">
             <button type="submit" name="addtocart" value="5" class="btn amado-btn">Add to cart</button>
           </form> -->
-          <%= form_tag(carts_create_path, method: :create) do %>
+          <%= form_tag(carts_path, method: :create) do %>
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
             <input type="hidden" name="item_id" value=<%= @item.id %> >
             <input type="hidden" name="user_id" value= <%= 1 %> >
