@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'carts/create'
+  get 'carts/show'
+  get 'carts/edit'
+  get 'carts/destroy'
   get 'categories/show'
   root :to => 'items#index'
   devise_for :users
