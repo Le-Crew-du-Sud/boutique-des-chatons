@@ -14,12 +14,17 @@ class CartsController < ApplicationController
   end
 
   def show
+    @cart = Cart.where(user_id: current_user.id).to_a
+    puts ">>>> cart id : #{@cart.id}".red
   end
 
   def edit
   end
 
   def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to carts_show_path
   end
 
 end
