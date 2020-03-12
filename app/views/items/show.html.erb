@@ -1,3 +1,4 @@
+
 <!-- Product Details Area Start -->
 <div class="single-product-area section-padding-100 clearfix">
   <div class="container-fluid">
@@ -13,7 +14,7 @@
                   <%= image_tag itempicture, alt: 'itempicture', style:"width:100%", class:""%>
                 </div>
 
-                
+
                 </div>
               <% end %>
             <%else%>
@@ -41,15 +42,14 @@
             <p> <%= @item.description %> </p>
           </div>
 
-          <!-- Add to Cart Form -->
-          <form class="cart clearfix" method="post">
-            <button type="submit" name="addtocart" value="5" class="btn amado-btn">Add to cart</button>
-          </form>
+  
           <div>
-          <%= link_to "Éditer ce châton", edit_item_path(@item.id)  %>
-
+          <%= link_to "Éditer ce châton", edit_item_path(@item.id), class:"btn amado-btn"  %>
           </div>
         </div>
+      </div>
+      <div>
+        <%= link_to "Supprimer ce châton", item_path(@item.id), class:"btn amado-btn", data:{method: "DELETE"} %>
       </div>
     </div>
   </div>
