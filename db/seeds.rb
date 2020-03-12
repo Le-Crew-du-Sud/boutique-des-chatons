@@ -34,21 +34,4 @@ image_url = 1
     seed += 1
     image_url += 1
 end
-seed = 1
-5.times do
-  Cart.create(
-    user_id: 2,
-    item_id: 2,
-    quantity: 1,
-    unit_price: Faker::Commerce.price)
-    puts "Seed Cart n°#{seed} crée."
-    seed += 1
-end
-seed = 1
-5.times do
-  User.create(
-    email: Faker::Lorem.word)
-    puts "Seed User n°#{seed} crée."
-    seed += 1
-end
 puts "Création des seeds terminées."
