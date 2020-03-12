@@ -14,8 +14,11 @@ puts ", Users."
 puts "Tables réinitialisées."
 
 puts "Création des seeds ..."
-10.times do
-  User.create(email: Faker::Internet.unique.email(domain: "yopmail.com"), password: "voiture", password_confirmation: "voiture")
+1.times do
+  User.create(email: "admin@admin.com", is_admin: true, password: "voiture", password_confirmation: "voiture")
+end
+1.times do
+  User.create(email: "user@user.com", password: "voiture", password_confirmation: "voiture")
 end
 seed = 1
 5.times do

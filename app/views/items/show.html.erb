@@ -42,11 +42,7 @@
             <p> <%= @item.description %> </p>
           </div>
 
-          <!-- Add to Cart Form -->
-          <!-- <form class="cart clearfix" method="post">
-            <button type="submit" name="addtocart" value="5" class="btn amado-btn">Add to cart</button>
 
-          </form> -->
           <div class="cart-btn mt-50 ml-auto">
             <%= form_tag(carts_path, method: :create) do %>
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
