@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy]
+  before_action :cu_admin, only: [:new, :create, :destroy]
+
   def index
     @itemvar = 1
     @item = Item.with_attached_itempicture.find(@itemvar)
@@ -49,5 +51,12 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.destroy
     redirect_to "/"
+  end
+
+  def cu_admin
+    unless current_user.is_admin == true
+      flash[:alert] = "Vous n'etes pas l'admin de cet événement."
+      redirect_back(fallback_location: request.referer)
+    end
   end
 end
