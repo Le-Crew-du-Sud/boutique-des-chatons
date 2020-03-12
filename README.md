@@ -16,6 +16,23 @@ https://boutique-des-chatons.herokuapp.com/
 * `rails server`
 * Se promener dans l'arborescence : http://localhost:3000/
 
+## Connexion aux profils
+
+#Pour se connecter en tant qu'User lambda:
+créer un User.
+
+Sinon utilise ces logs:
+user@user.com
+voiture
+
+#Pour se connecter en tant qu'Admin
+Utilise ces logs:
+admin@admin.com
+voiture
+
+
+
+
 ## Authors
 Projet réalisé par **[@maksimTHP]**(https://github.com/maksimTHP), **[@AnouarLdn]**(https://github.com/AnouarLdn), **[@fbrgmn]**(https://github.com/fbrgmn), **[@lifeae]**(https://github.com/lifeae/), **[@Akushon]**(https://github.com/Akushon/)
 
@@ -23,6 +40,7 @@ Projet réalisé par **[@maksimTHP]**(https://github.com/maksimTHP), **[@AnouarL
 
 
 
+##PS: Par pitié, ne supprime pas l'item qui porte l'ID Numéro 1 xD
 
 
 
@@ -96,5 +114,4 @@ Projet réalisé par **[@maksimTHP]**(https://github.com/maksimTHP), **[@AnouarL
 
 
 
-
-*Maksim est le plus beau* 
+*Maksim est le plus beau*
