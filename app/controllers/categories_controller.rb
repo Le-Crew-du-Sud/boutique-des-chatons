@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-  before_action :authenticate_user!
 
   def index
     redirect_to index_path
