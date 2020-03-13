@@ -1,0 +1,25 @@
+<% Item.all.where(category_id: params[:id]).each do |item| %>
+<div class="col-12 col-sm-6 col-md-12 col-xl-6">
+  <div class="single-product-wrapper">
+    <% @itemvar = item.id %>
+    <% item.itempicture.each do |itempicture| %>
+      <div class="product-img">
+        <%= image_tag item.itempicture.first, alt: 'chaton' %>
+      </div>
+      <% break %>
+    <% end %>
+
+      <!-- Product Description -->
+    <div class="product-description d-flex align-items-center justify-content-between">
+        <!-- Product Meta Data -->
+      <div class="product-meta-data">
+        <div class="line"></div>
+        <p class="product-price"><%= item.price %> €</p>
+        <h6><%= link_to item.title, item_path(item.id) %></h6>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<% end %>

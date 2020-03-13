@@ -1,6 +1,5 @@
 class CategoriesController < ApplicationController
 
-
   def index
     redirect_to index_path
   end
