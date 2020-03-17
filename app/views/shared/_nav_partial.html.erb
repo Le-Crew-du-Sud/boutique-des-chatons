@@ -1,70 +1,103 @@
 <!-- Mobile Nav (max width 767px)-->
-  <div class="mobile-nav">
-      <!-- Navbar Brand -->
-      <div class="amado-navbar-brand">
-          <%= link_to image_tag('logo.jpg'), "/" %>
-      </div>
-      <!-- Navbar Toggler -->
-      <div class="amado-navbar-toggler">
-          <span></span><span></span><span></span>
-      </div>
+<div class="mobile-nav">
+  <!-- Navbar Brand -->
+  <div class="amado-navbar-brand">
+    <%= link_to image_tag('logo.jpg'), "/" %>
   </div>
+  <!-- Phone Menu -->
+  <div class="row collapse col-sm-8 col-md-7 py-4" id="phone_menu">
+    <% if user_signed_in? && current_user.is_admin == false %>
+    <div class="amado-nav">
 
-
-    <!-- Header Area Start -->
-    <header class="header-area clearfix">
-        <!-- Close Icon -->
-        <div class="nav-close">
-            <i class="fa fa-close" aria-hidden="true"></i>
+      <a href="/carts/show/" class="cart-nav" style="margin-left:10px;">
+        <%= image_tag "cart.png", class:"cart-nav", alt:"cart"%>
+        Panier</a>
         </div>
-        <!-- Logo -->
-        <div class="logo">
-            <%= link_to image_tag('logo.jpg'), root_path %>
-        </div>
-        <!-- Amado Nav -->
-        <nav class="amado-nav">
-            <ul>
 
-                <li><%= link_to "Home", root_path %></li>
+    <div class="amado-nav">
 
-
-            </ul>
-        </nav>
-        <!-- Cart Menu -->
-        <div class="cart-fav-search mb-100">
-            <a href="/carts/show/" class="cart-nav"> <%= image_tag "cart.png", class:"cart-nav", alt: "cart"%> Panier</a>
-
-
-
-      </div>
-      <% if user_signed_in? %>
-
-    <nav class="amado-nav">
-      <ul>
         <% if user_signed_in? && current_user.is_admin == true %>
-          <li><%= link_to "Ajouter un produit", new_item_path %></li>
-        <% end %>
-        <li>
-          <%= link_to 'Mon profil',user_path(current_user.id)%>
-        </li>
+          <%= link_to "Ajouter un produit", new_item_path, style:"margin-left:10px;" %>
+      <% end %>
 
-        <li>
-          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-        </li>
-      </ul>
-      </nav>
+      <%= link_to 'Mon profil',user_path(current_user.id), style:"margin-left:10px;"%>
 
-    <% else %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, style:"margin-left:10px;" %>
+    </div>
+
+      <% else %>
     <nav class="amado-nav">
-      <ul>
-        <li>
-          <%= link_to "Connexion", new_user_session_path %>
-        </li>
-        <li>
-          <%= link_to "Inscription", new_user_registration_path%>
-        </li>
-      </ul>
+
+        <%= link_to "Connexion", new_user_session_path, style:"margin-left:15px;" %>
+
+        <%= link_to "Inscription", new_user_registration_path, style:"margin-left:15px;"%>
+
     </nav>
     <% end %>
-  </header>
-  <!-- Header Area End -->
+  </div>
+
+<!-- End of Phone Menu -->
+  <div class="amado-navbar-toggler" data-toggle="collapse" data-target="#phone_menu" id="dropdownMenuButton">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+</div>
+
+<!-- Header Area Start -->
+<header class="header-area clearfix">
+<!-- Close Icon -->
+<div class="nav-close">
+  <i class="fa fa-close" aria-hidden="true"></i>
+</div>
+<!-- Logo -->
+<div class="logo">
+  <%= link_to image_tag('logo.jpg'), root_path %>
+</div>
+<!-- Amado Nav -->
+<nav class="amado-nav">
+  <ul>
+
+    <li><%= link_to "Home", root_path %></li>
+
+  </ul>
+</nav>
+<!-- Cart Menu -->
+<% if user_signed_in? %>
+  <div class="cart-fav-search mb-100">
+    <a href="/carts/show/" class="cart-nav">
+      <%= image_tag "cart.png", class:"cart-nav", alt: "cart"%>
+      Panier</a>
+
+  </div>
+
+  <nav class="amado-nav">
+    <ul>
+      <% if user_signed_in? && current_user.is_admin == true %>
+        <li><%= link_to "Ajouter un produit", new_item_path %></li>
+      <% end %>
+      <li>
+        <%= link_to 'Mon profil',user_path(current_user.id)%>
+      </li>
+
+      <li>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+      </li>
+    </ul>
+  </nav>
+
+<% else %>
+  <nav class="amado-nav">
+    <ul>
+      <li>
+        <%= link_to "Connexion", new_user_session_path %>
+      </li>
+      <li>
+        <%= link_to "Inscription", new_user_registration_path%>
+      </li>
+    </ul>
+  </nav>
+<% end %>
+</header>
+<!-- Header Area End -->
