@@ -18,3 +18,4 @@
 //= require js/bootstrap.min.js
 //= require js/plugins.js
 //= require js/active.js
+//= require js/script.js
